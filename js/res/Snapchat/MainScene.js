@@ -90,7 +90,7 @@ import {
     /> */}
 
 <ViroText
-    text="Hello World"
+    text={this.props.title}
     textAlign="left"
     textAlignVertical="top"
     textLineBreakMode="justify"
