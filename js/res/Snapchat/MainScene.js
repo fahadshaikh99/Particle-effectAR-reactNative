@@ -32,9 +32,10 @@ import {
         fixedToEmitter={true}
 
         image={{
-          source:require('../particle_snow.png'),
-          height:0.01,
-          width:0.01,
+          color:'red',
+          source:require('../snow.png'),
+          height:0.05,
+          width:0.05,
           bloomThreshold:1.0
         }}
 
@@ -50,13 +51,31 @@ import {
         }}
 
         particleAppearance={{
+
           opacity:{
-            initialRange:[0,0],
+            initialRange:[0, 0],
+            factor:"Time",
             interpolation:[
               {endValue:1.0, interval:[0,500]},
               {endValue:0.0, interval:[4000,5000]}
             ]
           },
+          color:{
+            initialRange:["red", "blue"],
+            factor:"Time",
+            interpolation:[
+              {endValue:"red", interval:[0,300]},
+              {endValue:"red", interval:[300,400]},
+              {endValue:"red", interval:[4000,600]}
+            ]
+          },
+          // opacity:{
+          //   initialRange:[0,0],
+          //   interpolation:[
+          //     {endValue:1.0, interval:[0,500]},
+          //     {endValue:0.0, interval:[4000,5000]}
+          //   ]
+          // },
           scale:{
             initialRange:[[5,5,5], [10,10,10]],
             interpolation:[
@@ -64,7 +83,8 @@ import {
               {endValue:[10,10,10], interval:[3000,5000]},
               {endValue:[5,5,5], interval:[4000,5000]}
             ]
-          }
+          },
+         
         }}
 
         particlePhysics={{
@@ -95,9 +115,9 @@ import {
     textAlignVertical="top"
     textLineBreakMode="justify"
     textClipMode="clipToBounds"
-    color="#ff0000"
+    color="red"
     width={2} height={2}
-    style={{fontFamily:"Arial", fontSize:20, fontStyle:"italic", color:"#0000FF"}}
+    style={{fontFamily:"Arial", fontSize:20, fontStyle:"italic", color:"red"}}
     position={[0,-2,-5]}
  />
    
